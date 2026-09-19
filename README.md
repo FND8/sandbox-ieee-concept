@@ -1,13 +1,17 @@
 # The Sandbox 4.0 — IEEE ITB SB Event Management Platform
 
+[![Next.js](https://img.shields.io/badge/Next.js-black?logo=next.js&logoColor=white)](#) [![React](https://img.shields.io/badge/React-%2320232a.svg?logo=react&logoColor=%2361DAFB)](#) [![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-000?logo=shadcnui&logoColor=fff)](#) [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC.svg?logo=tailwind-css&logoColor=white)](#) [![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?logo=supabase&logoColor=fff)](#)
+
+### Access the deployed website URL here: https://sandbox-ieee-concept.vercel.app
+
 ---
 
-## 1. Short Project Overview
+# 1. Short Project Overview
 **The Sandbox 4.0** is a full-stack event management web application built for the IEEE ITB SB. It serves as a lightweight platform to showcase and manage technical seminars, workshops, and competitive challenges. The application provides a public-facing festival landing page for users to view and search for events, alongside a secure administrative dashboard for organizers to manage event data (CRUD operations).
 
 ---
 
-## 2. List of Completed Features
+# 2. List of Completed Features
 **MUST HAVE Features:**
 * **Public Event List & Details (`#events`):** Interactive landing page section featuring a responsive grid of scheduled festival seminars, workshops, and challenges.
 * **Dynamic Event Detail View (`/events/[id]`):** Dedicated page displaying comprehensive event metadata, timestamps, locations, and descriptions.
@@ -32,7 +36,7 @@
 
 ---
 
-## 3. Architecture Summary
+# 3. Architecture Summary
 * **Framework:** Built using the **Next.js App Router**, leveraging Server Components for secure, direct-to-database server-side rendering and Client Components for interactive forms and modals.
 * **Security & Middleware:** Route interception via Next.js `middleware.ts` to automatically protect all `/admin/*` paths against unauthenticated access.
 * **Database & Auth Integration:** Powered by Supabase SSR (`@supabase/ssr`), enforcing PostgreSQL Row Level Security (RLS) policies for granular access control.
@@ -40,7 +44,7 @@
 
 ---
 
-## 4. Tech Stack Used & Rationales
+# 4. Tech Stack Used & Rationales
 * **Next.js (App Router):** Unified fullstack framework enabling rapid frontend rendering and backend API route execution in a single repository.
 * **Supabase (PostgreSQL & Auth):** Provides instant, scalable database persistence with native RLS policies and built-in authentication, drastically reducing setup overhead.
 * **Tailwind CSS & Shadcn UI:** Delivers a modern, accessible, minimalist dark-mode interface optimized for rapid development without styling bloat.
@@ -50,39 +54,44 @@
 
 ---
 
-## 5. Local Setup & Run Instructions
+# 5. Local Setup & Run Instructions
 
 Clone the repository and run the application locally using **Bun**:
 
-# 1. Clone the repository
+## 1. Clone the repository
 ```sh
 git clone [https://github.com/your-username/sandbox-ieee-concept.git](https://github.com/your-username/sandbox-ieee-concept.git)
 cd sandbox-ieee-concept
 ```
 
-# 2. Install dependencies using Bun
+## 2. Install dependencies using Bun
 ```sh
 bun install
 ```
 
-# 3. Set up your environment variables (see Section 5)
+## 3. Set up your environment variables (see Section 6)
 ```sh
 cp .env.example .env.local
 ```
 
-# 4. Run the development server
+## 4. Run the development server
 ```sh
 bun dev
 ```
 Open http://localhost:3000 in your browser to view the application.
 
-# 5. Required Environment Variables (.env.example)
+---
+
+# 6. Required Environment Variables (.env.example)
 Create a `.env.local` file in the root directory with the following keys:
 ```sh
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
-# 6. Database Setup Instructions
+
+---
+
+# 7. Database Setup Instructions
 Create a new project on Supabase.
 
 Navigate to the SQL Editor in your Supabase Dashboard and execute the following schema script:
@@ -118,19 +127,19 @@ Go to Authentication > Providers > Email and ensure "Confirm email" is disabled 
 
 ---
 
-## 6. Evaluator / Demo Account Credentials
+# 8. Evaluator / Demo Account Credentials
 To test the admin dashboard, create an account via your local Supabase Auth dashboard or sign in using your configured environment test user credentials.
 
 ---
 
-## 7. Known Issues or Limitations
+# 9. Known Issues or Limitations
 * **Timezone Formatting**: Event dates are strictly formatted using en-GB to prevent Next.js server-client hydration mismatches. Timezones currently default to the user's local browser time.
 * **Image Assets**: The watermark logo requires a true transparent PNG or SVG. JPEGs will result in a solid block rather than a translucent overlay due to the lack of an alpha channel.
 * **Pagination**: Currently omitted; the event grid fetches all active events. This is suitable for a festival scope but would require pagination (limit/offset) if scaling to hundreds of past events.
 
 ---
 
-## 8. AI Tools Used & Overview
-AI Tools (Gemini) were used primarily as a thought partner and pair-programming assistant to scaffold repetitive UI layouts, like the Tailwind grid for the FAQ and Countdown timer. It was also utilized to debug Next.js specific hydration errors regarding nested DOM elements (e.g., placing buttons inside Radix UI triggers) and to refine the interactive search/filter logic on the client components. All architectural decisions, database schemas, and security boundaries were independently designed and verified.
+# 10. AI Tools
+Gemini were used primarily as a thought partner and pair-programming assistant to scaffold repetitive UI layouts, like the Tailwind grid for the FAQ and Countdown timer. It was also utilized to debug Next.js specific hydration errors regarding nested DOM elements (e.g., placing buttons inside Radix UI triggers) and to refine the interactive search/filter logic on the client components. All architectural decisions, database schemas, and security boundaries were independently designed and verified.
 
 ---
