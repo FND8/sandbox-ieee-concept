@@ -67,7 +67,7 @@ cd sandbox-ieee-concept
 bun install
 ```
 
-## 3. Set up your environment variables (see Section 5)
+## 3. Set up your environment variables (see Section 6)
 ```sh
 cp .env.example .env.local
 ```
