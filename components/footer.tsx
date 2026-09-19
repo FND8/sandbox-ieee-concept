@@ -84,7 +84,7 @@ export function Footer() {
       {/* Bottom Copyright Bar */}
       <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-border/40 flex flex-col sm:flex-row justify-center items-center gap-4 text-xs text-muted-foreground">
         <p className="flex items-center">
-          2026. Developed by Farrell Nabil Deyandra for IEEE ITB SB IT Fullstack Division Probation Phase purposes.
+          2026. Developed by FND for IEEE ITB SB IT Fullstack Division Probation Phase purposes.
         </p>
       </div>
     </footer>

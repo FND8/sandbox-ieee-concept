@@ -39,7 +39,7 @@ export default async function EventDetailPage({
 
       {/* 2. MAIN EVENT CONTENT */}
       <main className="flex-1 max-w-4xl w-full mx-auto px-6 py-12 space-y-8">
-        <div className="space-y-4">
+        <div className="flex flex-col items-center space-y-4">
           <div className="flex flex-wrap items-center gap-3">
             <span className="text-xs px-3 py-1 rounded-full font-medium bg-primary/10 text-primary border border-primary/20 flex items-center">
               <Tag className="mr-1.5 h-3.5 w-3.5" />
@@ -95,14 +95,14 @@ export default async function EventDetailPage({
 
         {/* FULL DESCRIPTION SECTION */}
         <div className="space-y-4 pt-4 border-t">
-          <h2 className="text-xl font-semibold">About This Event</h2>
+          <h2 className="text-xl text-center font-semibold">About This Event</h2>
           <div className="text-muted-foreground whitespace-pre-line leading-relaxed text-base bg-card/20 p-6 rounded-xl border">
             {event.description}
           </div>
         </div>
 
         {/* BOTTOM CALL TO ACTION */}
-        <div className="pt-6 items-center flex justify-end">
+        <div className="pt-6 items-center flex justify-center">
           <Button size="lg" asChild>
             <Link href="/login">
               <UserPlus className="mr-2 h-4 w-4" /> Register Now
